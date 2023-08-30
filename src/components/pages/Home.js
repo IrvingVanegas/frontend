@@ -286,7 +286,7 @@ function Home (){
             console.log(fecha);
         }
 
-        if (search.indexOf("tabla") !== -1 || search.indexOf("grafica") !== -1){
+        if (search.indexOf("tabla") !== -1 || search.indexOf("grafica") !== -1 || search.indexOf("esquema") !== -1 ){
 
             if(search.indexOf("temperatura") !== -1 || search.indexOf("clima") !== -1){
                 setShowTemp(true);
@@ -299,15 +299,15 @@ function Home (){
         } else if(search.indexOf("panel") !== -1){
 
             var panelN="";
-            if (search.indexOf("panel 1") !== -1 || search.indexOf("panel uno") !== -1) {
+            if (search.indexOf("panel 1") !== -1 || search.indexOf("panel uno") !== -1 || search.indexOf("primer panel") !== -1 ) {
                 panelN="panel1"
-            } else if (search.indexOf("panel 2") !== -1 || search.indexOf("panel dos") !== -1) {
+            } else if (search.indexOf("panel 2") !== -1 || search.indexOf("panel dos") !== -1 || search.indexOf("segundo panel") !== -1 ) {
                 panelN="panel2"
-            } else if (search.indexOf("panel 3") !== -1 || search.indexOf("panel tres") !== -1) {
+            } else if (search.indexOf("panel 3") !== -1 || search.indexOf("panel tres") !== -1 || search.indexOf("tercer panel") !== -1 ) {
                 panelN="panel3"
-            } else if (search.indexOf("panel 4") !== -1 || search.indexOf("panel cuatro") !== -1) {
+            } else if (search.indexOf("panel 4") !== -1 || search.indexOf("panel cuatro") !== -1 || search.indexOf("cuarto panel") !== -1 ) {
                 panelN="panel4"
-            } else if (search.indexOf("panel 5") !== -1 || search.indexOf("panel cinco") !== -1) {
+            } else if (search.indexOf("panel 5") !== -1 || search.indexOf("panel cinco") !== -1 || search.indexOf("quinto panel") !== -1 ) {
                 panelN="panel5"
             }
 
@@ -322,16 +322,16 @@ function Home (){
 
             if (fecha !== "") {
                 fetchCaptureWeather(fecha);
-            } else if (search.indexOf("ayer") !== -1 || search.indexOf("anterior") !== -1) {
+            } else if (search.indexOf("ayer") !== -1 || search.indexOf("anterior") !== -1 || search.indexOf("antes de") !== -1 ) {
                 fetchPreviousWeather();
             } else {
                 fetchCurrentWeather();
             }
 
-        } else if(search.indexOf("total") !== -1){
+        } else if(search.indexOf("total") !== -1 || search.indexOf("general") !== -1 || search.indexOf("suma") !== -1 || search.indexOf("sumatoria") !== -1 ){
             if (fecha !== "") {
                 fetchCaptureTotal(fecha);
-            } else if (search.indexOf("ayer") !== -1 || search.indexOf("anterior") !== -1) {
+            } else if (search.indexOf("ayer") !== -1 || search.indexOf("anterior") !== -1 || search.indexOf("antes de") !== -1 ) {
                 fetchPreviousTotal();
             } else {
                 fetchCurrentTotal();
