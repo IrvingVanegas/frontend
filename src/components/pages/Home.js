@@ -85,6 +85,120 @@ function Home (){
         }
     }
 
+    const fetchPanelNomPromedio = async (nombrePanel)=>{
+        try {
+            const res = await axios.get('http://localhost:8800/panel/'+nombrePanel+'/promedio');
+            let aux = [res.data];
+            let auxA = JSON.stringify(aux);
+            if (auxA === "[[]]") {
+                setRespuesta("Error no se pudo encontrar la informacion especificada");
+            } else {
+                let auxB = auxA.replace('[[{"AVG(kilowatts)":', "");
+                let resp = "El panel especificado tuvo una produccion promedio de: "+auxB.replace('}]]', "")+" kilowatts esta semana";
+                console.log(resp);
+                setRespuesta(resp);
+                speak({ text: resp }); 
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const fetchPanelNomDesviacion = async (nombrePanel)=>{
+        try {
+            const res = await axios.get('http://localhost:8800/panel/'+nombrePanel+'/desviacion');
+            let aux = [res.data];
+            let auxA = JSON.stringify(aux);
+            if (auxA === "[[]]") {
+                setRespuesta("Error no se pudo encontrar la informacion especificada");
+            } else {
+                let auxB = auxA.replace('[[{"STDDEV_SAMP(kilowatts)":', "");
+                let resp = "La desviacion estandar del panel especificado fue de: "+auxB.replace('}]]', "")+" kilowatts esta semana";
+                console.log(resp);
+                setRespuesta(resp);
+                speak({ text: resp }); 
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const fetchPanelNomVarianza = async (nombrePanel)=>{
+        try {
+            const res = await axios.get('http://localhost:8800/panel/'+nombrePanel+'/varianza');
+            let aux = [res.data];
+            let auxA = JSON.stringify(aux);
+            if (auxA === "[[]]") {
+                setRespuesta("Error no se pudo encontrar la informacion especificada");
+            } else {
+                let auxB = auxA.replace('[[{"VAR_SAMP(kilowatts)":', "");
+                let resp = "La varianza del panel especificado fue de: "+auxB.replace('}]]', "")+" kilowatts esta semana";
+                console.log(resp);
+                setRespuesta(resp);
+                speak({ text: resp }); 
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const fetchPanelPromedio = async ()=>{
+        try {
+            const res = await axios.get('http://localhost:8800/panel/promedio');
+            let aux = [res.data];
+            let auxA = JSON.stringify(aux);
+            if (auxA === "[[]]") {
+                setRespuesta("Error no se pudo encontrar la informacion especificada");
+            } else {
+                let auxB = auxA.replace('[[{"AVG(kilowatts)":', "");
+                let resp = "Los paneles tuvieron una produccion promedio de: "+auxB.replace('}]]', "")+" kilowatts";
+                console.log(resp);
+                setRespuesta(resp);
+                speak({ text: resp }); 
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const fetchPanelDesviacion = async ()=>{
+        try {
+            const res = await axios.get('http://localhost:8800/panel/desviacion');
+            let aux = [res.data];
+            let auxA = JSON.stringify(aux);
+            if (auxA === "[[]]") {
+                setRespuesta("Error no se pudo encontrar la informacion especificada");
+            } else {
+                let auxB = auxA.replace('[[{"STDDEV_SAMP(kilowatts)":', "");
+                let resp = "La desviación estandar de los paneles es de: "+auxB.replace('}]]', "")+" kilowatts";
+                console.log(resp);
+                setRespuesta(resp);
+                speak({ text: resp }); 
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const fetchPanelVarianza = async ()=>{
+        try {
+            const res = await axios.get('http://localhost:8800/panel/varianza');
+            let aux = [res.data];
+            let auxA = JSON.stringify(aux);
+            if (auxA === "[[]]") {
+                setRespuesta("Error no se pudo encontrar la informacion especificada");
+            } else {
+                let auxB = auxA.replace('[[{"VAR_SAMP(kilowatts)":', "");
+                let resp = "La varianza de los paneles es de: "+auxB.replace('}]]', "")+" kilowatts";
+                console.log(resp);
+                setRespuesta(resp);
+                speak({ text: resp }); 
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const fetchCurrentWeather = async () =>{
         try {
             const res = await axios.get('http://localhost:8800/temperatura/actual');
@@ -133,6 +247,63 @@ function Home (){
             } else {
                 let auxB = auxA.replace('[[{"centigrados":', "");
                 let resp = "La temperatura de en la fecha especificada fue de "+auxB.replace('}]]', "")+" grados centigrados";
+                console.log(resp);
+                setRespuesta(resp);
+                speak({ text: resp })   
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const fetchWeatherPromedio = async () =>{
+        try {
+            const res = await axios.get('http://localhost:8800/temperatura/promedio');
+            let aux = [res.data];
+            let auxA = JSON.stringify(aux);
+            if (auxA === "[[]]") {
+                setRespuesta("Error no se pudo encontrar la informacion especificada");
+            } else {
+                let auxB = auxA.replace('[[{"AVG(centigrados)":', "");
+                let resp = "La temperatura promedio los ultimos 7 dias fue de "+auxB.replace('}]]', "")+" grados centigrados";
+                console.log(resp);
+                setRespuesta(resp);
+                speak({ text: resp })   
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const fetchWeatherDesviacion = async () =>{
+        try {
+            const res = await axios.get('http://localhost:8800/temperatura/desviacion');
+            let aux = [res.data];
+            let auxA = JSON.stringify(aux);
+            if (auxA === "[[]]") {
+                setRespuesta("Error no se pudo encontrar la informacion especificada");
+            } else {
+                let auxB = auxA.replace('[[{"STDDEV_SAMP(centigrados)":', "");
+                let resp = "La desviación estandar de temperatura los ultimos 7 dias fue de "+auxB.replace('}]]', "")+" grados centigrados";
+                console.log(resp);
+                setRespuesta(resp);
+                speak({ text: resp })   
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const fetchWeatherVarianza = async () =>{
+        try {
+            const res = await axios.get('http://localhost:8800/temperatura/desviacion');
+            let aux = [res.data];
+            let auxA = JSON.stringify(aux);
+            if (auxA === "[[]]") {
+                setRespuesta("Error no se pudo encontrar la informacion especificada");
+            } else {
+                let auxB = auxA.replace('[[{"VAR_SAMP(centigrados)":', "");
+                let resp = "La varianza de temperatura los ultimos 7 dias fue de "+auxB.replace('}]]', "")+" grados centigrados";
                 console.log(resp);
                 setRespuesta(resp);
                 speak({ text: resp })   
@@ -199,6 +370,63 @@ function Home (){
         }
     }
 
+    const fetchTotalPromedio = async () =>{
+        try {
+            const res = await axios.get('http://localhost:8800/produccionTotal/promedio');
+            let aux = [res.data];
+            let auxA = JSON.stringify(aux);
+            if (auxA === "[[]]") {
+                setRespuesta("Error no se pudo encontrar la informacion especificada");
+            } else {
+                let auxB = auxA.replace('[[{"AVG(watts)":', "");
+                let resp = "La produccion de los ultimos 7 dias tuvo un promedio de "+auxB.replace('}]]', "")+" kilowatts";
+                console.log(resp);
+                setRespuesta(resp);
+                speak({ text: resp })   
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const fetchTotalDesviacion = async () =>{
+        try {
+            const res = await axios.get('http://localhost:8800/produccionTotal/desviacion');
+            let aux = [res.data];
+            let auxA = JSON.stringify(aux);
+            if (auxA === "[[]]") {
+                setRespuesta("Error no se pudo encontrar la informacion especificada");
+            } else {
+                let auxB = auxA.replace('[[{"STDDEV_SAMP(watts)":', "");
+                let resp = "La produccion de los ultimos 7 dias tuvo una desviacion estandar de "+auxB.replace('}]]', "")+" kilowatts";
+                console.log(resp);
+                setRespuesta(resp);
+                speak({ text: resp })   
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const fetchTotalVarianza = async () =>{
+        try {
+            const res = await axios.get('http://localhost:8800/produccionTotal/varianza');
+            let aux = [res.data];
+            let auxA = JSON.stringify(aux);
+            if (auxA === "[[]]") {
+                setRespuesta("Error no se pudo encontrar la informacion especificada");
+            } else {
+                let auxB = auxA.replace('[[{"STDDEV_SAMP(watts)":', "");
+                let resp = "La produccion de los ultimos 7 dias tuvo una varianza de "+auxB.replace('}]]', "")+" kilowatts";
+                console.log(resp);
+                setRespuesta(resp);
+                speak({ text: resp })   
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const dataP = panelData.map((panel)=>({label: panel.nombrePanel, bar: panel.kilowatts}));
     const dataTemp = tempData.map((temperatura)=>({label: temperatura.captura, bar: temperatura.centigrados}));
     const dataTotal = totalData.map((total)=>({label: total.captura, bar: total.watts}));
@@ -241,6 +469,15 @@ function Home (){
         var dia= "";
         var mes= "";
         var año= "";
+        var operacion="";
+
+        if (search.indexOf("promedio") !== -1) {
+            operacion="promedio";
+        } else if (search.indexOf("desviación") !== -1){
+            operacion="desviacion";
+        } else if (search.indexOf("varianza") !== -1){
+            operacion="varianza";
+        }
 
         if(search.match(/(\d+ \w{2} \w{4,10} \w{2,3} \d{4})/g)){
             auxDate =""+search.match(/(\d+ \w{2} \w{4,10} \w{2,3} \d{4})/g);
@@ -292,13 +529,14 @@ function Home (){
                 setShowTemp(true);
             } else if(search.indexOf("panel") !== -1 || search.indexOf("paneles") !== -1){
                 setShowPanel(true);
-            } else if(search.indexOf("total") !== -1){
+            } else if(search.indexOf("total") !== -1 || search.indexOf("general") !== -1){
                 setShowTotal(true);
             } else setRespuesta("Error en busqueda");
 
         } else if(search.indexOf("panel") !== -1){
 
             var panelN="";
+
             if (search.indexOf("panel 1") !== -1 || search.indexOf("panel uno") !== -1 || search.indexOf("primer panel") !== -1 ) {
                 panelN="panel1"
             } else if (search.indexOf("panel 2") !== -1 || search.indexOf("panel dos") !== -1 || search.indexOf("segundo panel") !== -1 ) {
@@ -313,8 +551,36 @@ function Home (){
 
             if (fecha !== "") {
                 fetchPanelCapture(panelN, fecha);
+            } else if(panelN !== ""){
+                if(operacion !== ""){
+                    switch (operacion) {
+                        case "promedio":
+                            fetchPanelNomPromedio(panelN);
+                            break;
+                        case "desviacion":
+                            fetchPanelNomDesviacion(panelN);
+                            break;
+                        case "varianza":
+                            fetchPanelNomVarianza(panelN);
+                            break;
+                        default:
+                            break;
+                    }
+                } else fetchPanelProd(panelN);
             } else {
-                fetchPanelProd(panelN);
+                switch (operacion) {
+                    case "promedio":
+                        fetchPanelPromedio();
+                        break;
+                    case "desviacion":
+                        fetchPanelDesviacion();
+                        break;
+                    case "varianza":
+                        fetchPanelVarianza();
+                        break;
+                    default:
+                        break;
+                }
             }
            
             
@@ -322,7 +588,21 @@ function Home (){
 
             if (fecha !== "") {
                 fetchCaptureWeather(fecha);
-            } else if (search.indexOf("ayer") !== -1 || search.indexOf("anterior") !== -1 || search.indexOf("antes de") !== -1 ) {
+            } else if (operacion !== ""){
+                switch (operacion) {
+                    case "promedio":
+                        fetchWeatherPromedio();
+                        break;
+                    case "desviacion":
+                        fetchWeatherDesviacion();
+                        break;
+                    case "varianza":
+                        fetchWeatherVarianza();
+                        break;
+                    default:
+                        break;
+                }
+            }else if (search.indexOf("ayer") !== -1 || search.indexOf("anterior") !== -1 || search.indexOf("antes de") !== -1 ) {
                 fetchPreviousWeather();
             } else {
                 fetchCurrentWeather();
@@ -331,7 +611,21 @@ function Home (){
         } else if(search.indexOf("total") !== -1 || search.indexOf("general") !== -1 || search.indexOf("suma") !== -1 || search.indexOf("sumatoria") !== -1 ){
             if (fecha !== "") {
                 fetchCaptureTotal(fecha);
-            } else if (search.indexOf("ayer") !== -1 || search.indexOf("anterior") !== -1 || search.indexOf("antes de") !== -1 ) {
+            } else if (operacion !== ""){
+                switch (operacion) {
+                    case "promedio":
+                        fetchTotalPromedio();
+                        break;
+                    case "desviacion":
+                        fetchTotalDesviacion();
+                        break;
+                    case "varianza":
+                        fetchTotalVarianza();
+                        break;
+                    default:
+                        break;
+                }
+            }else if (search.indexOf("ayer") !== -1 || search.indexOf("anterior") !== -1 || search.indexOf("antes de") !== -1 ) {
                 fetchPreviousTotal();
             } else {
                 fetchCurrentTotal();
