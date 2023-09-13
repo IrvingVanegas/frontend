@@ -471,9 +471,9 @@ function Home (){
         var año= "";
         var operacion="";
 
-        if (search.indexOf("promedio") !== -1) {
+        if (search.indexOf("promedio") !== -1 || search.indexOf("media") !== -1) {
             operacion="promedio";
-        } else if (search.indexOf("desviación") !== -1){
+        } else if (search.indexOf("desviación") !== -1 || search.indexOf("desviación estándar") !== -1 || search.indexOf("desviación típica") !== -1){
             operacion="desviacion";
         } else if (search.indexOf("varianza") !== -1){
             operacion="varianza";
@@ -529,23 +529,23 @@ function Home (){
                 setShowTemp(true);
             } else if(search.indexOf("panel") !== -1 || search.indexOf("paneles") !== -1){
                 setShowPanel(true);
-            } else if(search.indexOf("total") !== -1 || search.indexOf("general") !== -1){
+            } else if(search.indexOf("total") !== -1 || search.indexOf("general") !== -1 || search.indexOf("suma") !== -1 || search.indexOf("sumatoria") !== -1 ){
                 setShowTotal(true);
             } else setRespuesta("Error en busqueda");
 
-        } else if(search.indexOf("panel") !== -1){
+        } else if(search.indexOf("panel") !== -1 || search.indexOf("paneles") !== -1){
 
             var panelN="";
 
-            if (search.indexOf("panel 1") !== -1 || search.indexOf("panel uno") !== -1 || search.indexOf("primer panel") !== -1 ) {
+            if (search.indexOf("panel 1") !== -1 || search.indexOf("panel uno") !== -1 || search.indexOf("primer panel") !== -1 || search.indexOf("panel solar 1") !== -1 || search.indexOf("panel solar uno") !== -1 || search.indexOf("primer panel solar") !== -1 ) {
                 panelN="panel1"
-            } else if (search.indexOf("panel 2") !== -1 || search.indexOf("panel dos") !== -1 || search.indexOf("segundo panel") !== -1 ) {
+            } else if (search.indexOf("panel 2") !== -1 || search.indexOf("panel dos") !== -1 || search.indexOf("segundo panel") !== -1 || search.indexOf("panel solar 2") !== -1 || search.indexOf("panel solar dos") !== -1 || search.indexOf("segundo panel solar") !== -1 ) {
                 panelN="panel2"
-            } else if (search.indexOf("panel 3") !== -1 || search.indexOf("panel tres") !== -1 || search.indexOf("tercer panel") !== -1 ) {
+            } else if (search.indexOf("panel 3") !== -1 || search.indexOf("panel tres") !== -1 || search.indexOf("tercer panel") !== -1 || search.indexOf("panel solar 3") !== -1 || search.indexOf("panel solar tres") !== -1 || search.indexOf("tercer panel solar") !== -1 ) {
                 panelN="panel3"
-            } else if (search.indexOf("panel 4") !== -1 || search.indexOf("panel cuatro") !== -1 || search.indexOf("cuarto panel") !== -1 ) {
+            } else if (search.indexOf("panel 4") !== -1 || search.indexOf("panel cuatro") !== -1 || search.indexOf("cuarto panel") !== -1 || search.indexOf("panel solar 4") !== -1 || search.indexOf("panel solar cuatro") !== -1 || search.indexOf("cuarto panel solar") !== -1 ) {
                 panelN="panel4"
-            } else if (search.indexOf("panel 5") !== -1 || search.indexOf("panel cinco") !== -1 || search.indexOf("quinto panel") !== -1 ) {
+            } else if (search.indexOf("panel 5") !== -1 || search.indexOf("panel cinco") !== -1 || search.indexOf("quinto panel") !== -1 || search.indexOf("panel solar 5") !== -1 || search.indexOf("panel solar cinco") !== -1 || search.indexOf("quinto panel solar") !== -1 ) {
                 panelN="panel5"
             }
 
