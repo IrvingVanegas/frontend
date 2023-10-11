@@ -9,6 +9,8 @@ function Home (){
     const [respuesta, setRespuesta] = useState("");
     const { speak } = useSpeechSynthesis();
     const { transcript, resetTranscript } = useSpeechRecognition();
+    const [startDisabled, setStartDisabled] = useState(false);
+    const [stopDisabled, setStopDisabled] = useState(true);
     const [isListening, setIsListening] = useState(false);
     const [showPanel, setShowPanel] = useState(false);
     const [showTotal, setShowTotal] = useState(false);
@@ -442,6 +444,8 @@ function Home (){
 
     const handleListing = () => {
         setIsListening(true);
+        setStopDisabled(false);
+        setStartDisabled(true);
         microphoneRef.current.classList.add("listening");
         SpeechRecognition.startListening({
           continuous: true,
@@ -450,7 +454,8 @@ function Home (){
 
     const stopHandle = () => {
         setIsListening(false);
-
+        setStopDisabled(true);
+        setStartDisabled(false);
         if(transcript !== ""){
             generateResponse(transcript);
         } 
@@ -459,6 +464,8 @@ function Home (){
     };
 
     const handleReset = () => {
+        setStopDisabled(true);
+        setStartDisabled(false);
         resetTranscript();
         setRespuesta("");
     };
@@ -659,11 +666,19 @@ function Home (){
                                     <div className="control-microphone">
                                         <Button
                                             className="microphone-button-container"
+                                            disabled={startDisabled}
                                             ref={microphoneRef}
-                                            onMouseDown={handleListing}
-                                            onMouseUp={stopHandle}
+                                            onClick={handleListing}
                                             >
                                             Iniciar
+                                        </Button>
+                                        <Button
+                                            className="microphone-button-container"
+                                            disabled={stopDisabled}
+                                            ref={microphoneRef}
+                                            onClick={stopHandle}
+                                            >
+                                            Parar
                                         </Button>
                                         <Button onClick={() => speak({ text: respuesta })}>Escuchar</Button>
                                         <Button className="microphone-reset btn" onClick={handleReset}>
@@ -681,9 +696,9 @@ function Home (){
                                     <Accordion.Body>
                                         <p>Presione y sostenga el boton "Iniciar" para activar el microfono</p>
                                         <br/>
-                                        <p>Dicte lo que desea buscar y suelte el boton "Iniciar"</p>
+                                        <p>Dicte lo que desea buscar y presione el boton "Parar"</p>
                                         <br/>
-                                        <p>Presione el boton "Escuchar" para escuchar el resultado de su busqueda</p>
+                                        <p>Presione el boton "Escuchar" para volver a escuchar el resultado de su busqueda</p>
                                         <br/>
                                         <p>Para realizar una nueva busqueda presione el boton "Reiniciar"</p>
                                     </Accordion.Body>
