@@ -12,7 +12,6 @@ function Navigationbar() {
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand as={Link} to="/" >
-            <img src="../images/logo.png" width="40px" height="40px" alt="home"/> {' '}
             Analisis de Datos de Agrovoltaica
           </Navbar.Brand>
         </Container>
@@ -29,5 +28,7 @@ function Navigationbar() {
     </>
   );
 }
+
+//<img src="../images/logo.png" width="40px" height="40px" alt="home"/> {' '}
 
 export default Navigationbar;
