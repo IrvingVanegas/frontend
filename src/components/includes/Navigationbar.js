@@ -1,6 +1,5 @@
 import React from "react";
 import Home from "../pages/Home";
-import Medicion from "../pages/Medicion";
 import { Container } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { Routes, Route, Link } from 'react-router-dom';
@@ -19,7 +18,6 @@ function Navigationbar() {
       <div>
       <Routes>
         <Route exact path='/' element={<Home/>} />
-        <Route exact path='/medicion' element={<Medicion/>} />
         <Route render={function () {
           return <p>Not found</p>
         }} />
