@@ -707,7 +707,7 @@ function Home (){
                         </Col>
                     </Row>
                     <br/>
-                    <div className="card-menu">
+                    <div className="examples">
                         <Accordion>
                             <Accordion.Item eventKey="0">
                                 <Accordion.Header>Ejemplos</Accordion.Header>
