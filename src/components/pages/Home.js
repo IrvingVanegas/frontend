@@ -658,7 +658,7 @@ function Home (){
                                             <div className="microphone-result-text">{transcript}</div>
                                     </div>
                                     <br/>
-                                    <div className="respuesta-busqueda">
+                                    <div className="search-result">
                                         {respuesta}
                                     </div>
                                     <br/>
