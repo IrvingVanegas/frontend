@@ -741,7 +741,7 @@ function Home (){
                     size="lg"
                     show={showPanel}
                     onHide={() => setShowPanel(false)}
-                    aria-labelledby="example-modal-sizes-title-lg">
+                    aria-labelledby="modal-panel">
                     <Modal.Header closeButton>
                         <Modal.Title>Produccion por panel</Modal.Title>
                     </Modal.Header>
@@ -777,7 +777,7 @@ function Home (){
                     size="lg"
                     show={showTotal}
                     onHide={() => setShowTotal(false)}
-                    aria-labelledby="example-modal-sizes-title-lg">
+                    aria-labelledby="modal_total">
                     <Modal.Header closeButton>
                         <Modal.Title>Produccion Total</Modal.Title>
                     </Modal.Header>
@@ -813,7 +813,7 @@ function Home (){
                     size="lg"
                     show={showTemp}
                     onHide={() => setShowTemp(false)}
-                    aria-labelledby="example-modal-sizes-title-lg">
+                    aria-labelledby="modal-temperatura">
                     <Modal.Header closeButton>
                         <Modal.Title>Temperatura</Modal.Title>
                     </Modal.Header>
