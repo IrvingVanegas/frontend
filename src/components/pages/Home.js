@@ -653,7 +653,6 @@ function Home (){
                                     <div className="microphone-status">
                                         {isListening ? "Escuchando........." : "Presione para Iniciar"}
                                     </div>
-                                    {isListening}
                                     <br/>
                                     <div className="microphone-result-container">
                                             <div className="microphone-result-text">{transcript}</div>
