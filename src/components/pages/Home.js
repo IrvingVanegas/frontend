@@ -557,9 +557,13 @@ function Home (){
             }
 
             if (fecha !== "") {
+
                 fetchPanelCapture(panelN, fecha);
+
             } else if(panelN !== ""){
+
                 if(operacion !== ""){
+                    
                     switch (operacion) {
                         case "promedio":
                             fetchPanelNomPromedio(panelN);
@@ -573,8 +577,11 @@ function Home (){
                         default:
                             break;
                     }
+
                 } else fetchPanelProd(panelN);
+
             } else {
+
                 switch (operacion) {
                     case "promedio":
                         fetchPanelPromedio();
