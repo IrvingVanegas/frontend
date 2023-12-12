@@ -115,7 +115,7 @@ function Home (){
                 setRespuesta("Error no se pudo encontrar la informacion especificada");
             } else {
                 let auxB = auxA.replace('[[{"STDDEV_SAMP(kilowatts)":', "");
-                let resp = "La desviacion estandar del panel especificado fue de: "+auxB.replace('}]]', "")+" kilowatts esta semana";
+                let resp = "La desviacion estandar del panel especificado fue de: "+auxB.replace('}]]', "")+" esta semana";
                 console.log(resp);
                 setRespuesta(resp);
                 speak({ text: resp }); 
@@ -134,7 +134,7 @@ function Home (){
                 setRespuesta("Error no se pudo encontrar la informacion especificada");
             } else {
                 let auxB = auxA.replace('[[{"VAR_SAMP(kilowatts)":', "");
-                let resp = "La varianza del panel especificado fue de: "+auxB.replace('}]]', "")+" kilowatts esta semana";
+                let resp = "La varianza del panel especificado fue de: "+auxB.replace('}]]', "")+" esta semana";
                 console.log(resp);
                 setRespuesta(resp);
                 speak({ text: resp }); 
@@ -172,7 +172,7 @@ function Home (){
                 setRespuesta("Error no se pudo encontrar la informacion especificada");
             } else {
                 let auxB = auxA.replace('[[{"STDDEV_SAMP(kilowatts)":', "");
-                let resp = "La desviación estandar de los paneles es de: "+auxB.replace('}]]', "")+" kilowatts";
+                let resp = "La desviación estandar de los paneles es de: "+auxB.replace('}]]', "")+".";
                 console.log(resp);
                 setRespuesta(resp);
                 speak({ text: resp }); 
@@ -191,7 +191,7 @@ function Home (){
                 setRespuesta("Error no se pudo encontrar la informacion especificada");
             } else {
                 let auxB = auxA.replace('[[{"VAR_SAMP(kilowatts)":', "");
-                let resp = "La varianza de los paneles es de: "+auxB.replace('}]]', "")+" kilowatts";
+                let resp = "La varianza de los paneles es de: "+auxB.replace('}]]', "")+".";
                 console.log(resp);
                 setRespuesta(resp);
                 speak({ text: resp }); 
@@ -286,7 +286,7 @@ function Home (){
                 setRespuesta("Error no se pudo encontrar la informacion especificada");
             } else {
                 let auxB = auxA.replace('[[{"STDDEV_SAMP(centigrados)":', "");
-                let resp = "La desviación estandar de temperatura los ultimos 7 dias fue de "+auxB.replace('}]]', "")+" grados centigrados";
+                let resp = "La desviación estandar de temperatura los ultimos 7 dias fue de "+auxB.replace('}]]', "")+".";
                 console.log(resp);
                 setRespuesta(resp);
                 speak({ text: resp })   
@@ -305,7 +305,7 @@ function Home (){
                 setRespuesta("Error no se pudo encontrar la informacion especificada");
             } else {
                 let auxB = auxA.replace('[[{"VAR_SAMP(centigrados)":', "");
-                let resp = "La varianza de temperatura los ultimos 7 dias fue de "+auxB.replace('}]]', "")+" grados centigrados";
+                let resp = "La varianza de temperatura los ultimos 7 dias fue de "+auxB.replace('}]]', "")+".";
                 console.log(resp);
                 setRespuesta(resp);
                 speak({ text: resp })   
@@ -400,7 +400,7 @@ function Home (){
                 setRespuesta("Error no se pudo encontrar la informacion especificada");
             } else {
                 let auxB = auxA.replace('[[{"STDDEV_SAMP(watts)":', "");
-                let resp = "La produccion de los ultimos 7 dias tuvo una desviacion estandar de "+auxB.replace('}]]', "")+" kilowatts";
+                let resp = "La produccion de los ultimos 7 dias tuvo una desviacion estandar de "+auxB.replace('}]]', "")+".";
                 console.log(resp);
                 setRespuesta(resp);
                 speak({ text: resp })   
@@ -419,7 +419,7 @@ function Home (){
                 setRespuesta("Error no se pudo encontrar la informacion especificada");
             } else {
                 let auxB = auxA.replace('[[{"STDDEV_SAMP(watts)":', "");
-                let resp = "La produccion de los ultimos 7 dias tuvo una varianza de "+auxB.replace('}]]', "")+" kilowatts";
+                let resp = "La produccion de los ultimos 7 dias tuvo una varianza de "+auxB.replace('}]]', "")+".";
                 console.log(resp);
                 setRespuesta(resp);
                 speak({ text: resp })   
