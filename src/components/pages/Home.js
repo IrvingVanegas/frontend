@@ -22,7 +22,7 @@ function Home (){
     useEffect(()=>{
         const fetchPanelData = async ()=>{
             try {
-                const res = await axios.get("http://localhost:8800/panel");
+                const res = await axios.get("https://backend-production-a965.up.railway.app/panel");
                 setPanelData(res.data);
             } catch (error) {
                 console.log(error);
@@ -30,7 +30,7 @@ function Home (){
         }
         const fetchTempData = async ()=>{
             try {
-                const res = await axios.get("http://localhost:8800/temperatura");
+                const res = await axios.get("https://backend-production-a965.up.railway.app/temperatura");
                 setTepmData(res.data);
             } catch (error) {
                 console.log(error);
@@ -38,7 +38,7 @@ function Home (){
         }
         const fetchTotalData = async ()=>{
             try {
-                const res = await axios.get("http://localhost:8800/produccionTotal");
+                const res = await axios.get("https://backend-production-a965.up.railway.app/produccionTotal");
                 setTotalData(res.data);
             } catch (error) {
                 console.log(error);
@@ -51,7 +51,7 @@ function Home (){
 
     const fetchPanelProd = async (nombrePanel)=>{
         try {
-            const res = await axios.get('http://localhost:8800/panel/'+nombrePanel);
+            const res = await axios.get('https://backend-production-a965.up.railway.app/panel/'+nombrePanel);
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -70,7 +70,7 @@ function Home (){
 
     const fetchPanelCapture = async (nombrePanel, captura)=>{
         try {
-            const res = await axios.get('http://localhost:8800/panel/'+nombrePanel+'/'+captura);
+            const res = await axios.get('https://backend-production-a965.up.railway.app/panel/'+nombrePanel+'/'+captura);
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -89,7 +89,7 @@ function Home (){
 
     const fetchPanelNomPromedio = async (nombrePanel)=>{
         try {
-            const res = await axios.get('http://localhost:8800/panel/'+nombrePanel+'/promedio');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/panel/'+nombrePanel+'/promedio');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -108,7 +108,7 @@ function Home (){
 
     const fetchPanelNomDesviacion = async (nombrePanel)=>{
         try {
-            const res = await axios.get('http://localhost:8800/panel/'+nombrePanel+'/desviacion');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/panel/'+nombrePanel+'/desviacion');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -127,7 +127,7 @@ function Home (){
 
     const fetchPanelNomVarianza = async (nombrePanel)=>{
         try {
-            const res = await axios.get('http://localhost:8800/panel/'+nombrePanel+'/varianza');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/panel/'+nombrePanel+'/varianza');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -146,7 +146,7 @@ function Home (){
 
     const fetchPanelPromedio = async ()=>{
         try {
-            const res = await axios.get('http://localhost:8800/panel/promedio');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/panel/promedio');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -165,7 +165,7 @@ function Home (){
 
     const fetchPanelDesviacion = async ()=>{
         try {
-            const res = await axios.get('http://localhost:8800/panel/desviacion');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/panel/desviacion');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -184,7 +184,7 @@ function Home (){
 
     const fetchPanelVarianza = async ()=>{
         try {
-            const res = await axios.get('http://localhost:8800/panel/varianza');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/panel/varianza');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -203,7 +203,7 @@ function Home (){
 
     const fetchCurrentWeather = async () =>{
         try {
-            const res = await axios.get('http://localhost:8800/temperatura/actual');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/temperatura/actual');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -222,7 +222,7 @@ function Home (){
 
     const fetchPreviousWeather = async () =>{
         try {
-            const res = await axios.get('http://localhost:8800/temperatura/ayer');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/temperatura/ayer');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -241,7 +241,7 @@ function Home (){
 
     const fetchCaptureWeather = async (captura) =>{
         try {
-            const res = await axios.get('http://localhost:8800/temperatura/'+captura);
+            const res = await axios.get('https://backend-production-a965.up.railway.app/temperatura/'+captura);
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -260,7 +260,7 @@ function Home (){
 
     const fetchWeatherPromedio = async () =>{
         try {
-            const res = await axios.get('http://localhost:8800/temperatura/promedio');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/temperatura/promedio');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -279,7 +279,7 @@ function Home (){
 
     const fetchWeatherDesviacion = async () =>{
         try {
-            const res = await axios.get('http://localhost:8800/temperatura/desviacion');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/temperatura/desviacion');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -298,7 +298,7 @@ function Home (){
 
     const fetchWeatherVarianza = async () =>{
         try {
-            const res = await axios.get('http://localhost:8800/temperatura/desviacion');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/temperatura/desviacion');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -317,7 +317,7 @@ function Home (){
 
     const fetchCurrentTotal = async () =>{
         try {
-            const res = await axios.get('http://localhost:8800/produccionTotal/actual');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/produccionTotal/actual');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -336,7 +336,7 @@ function Home (){
 
     const fetchPreviousTotal = async () =>{
         try {
-            const res = await axios.get('http://localhost:8800/produccionTotal/ayer');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/produccionTotal/ayer');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -355,7 +355,7 @@ function Home (){
 
     const fetchCaptureTotal = async (captura) =>{
         try {
-            const res = await axios.get('http://localhost:8800/produccionTotal/'+captura);
+            const res = await axios.get('https://backend-production-a965.up.railway.app/produccionTotal/'+captura);
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -374,7 +374,7 @@ function Home (){
 
     const fetchTotalPromedio = async () =>{
         try {
-            const res = await axios.get('http://localhost:8800/produccionTotal/promedio');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/produccionTotal/promedio');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -393,7 +393,7 @@ function Home (){
 
     const fetchTotalDesviacion = async () =>{
         try {
-            const res = await axios.get('http://localhost:8800/produccionTotal/desviacion');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/produccionTotal/desviacion');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
@@ -412,7 +412,7 @@ function Home (){
 
     const fetchTotalVarianza = async () =>{
         try {
-            const res = await axios.get('http://localhost:8800/produccionTotal/varianza');
+            const res = await axios.get('https://backend-production-a965.up.railway.app/produccionTotal/varianza');
             let aux = [res.data];
             let auxA = JSON.stringify(aux);
             if (auxA === "[[]]") {
