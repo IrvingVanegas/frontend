@@ -686,7 +686,12 @@ function Home (){
                                             >
                                             Parar
                                         </Button>
-                                        <Button onClick={() => speak({ text: respuesta })}>Escuchar</Button>
+                                    </div>
+                                    <br/>
+                                    <div className="control-microphone">
+                                        <Button onClick={() => speak({ text: respuesta })}>
+                                            Escuchar
+                                        </Button>
                                         <Button className="microphone-reset btn" onClick={handleReset}>
                                             Reiniciar
                                         </Button>
